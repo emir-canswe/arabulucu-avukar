@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Navy Blue Background Shape -->
+  <rect width="512" height="512" rx="128" fill="#031636"/>
+  
+  <!-- Financial chart / Accounting accent in Gold -->
+  <path d="M116 350 H276 L396 250" fill="none" stroke="#c5a880" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M346 250 H396 V300" fill="none" stroke="#c5a880" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Stylized "IFC" Monogram in White -->
+  <!-- Letter I -->
+  <path d="M117 150 H147 V310 H117 Z" fill="#ffffff"/>
+  
+  <!-- Letter F -->
+  <path d="M187 150 H267 V180 H217 V215 H257 V245 H217 V310 H187 Z" fill="#ffffff"/>
+  
+  <!-- Letter C -->
+  <path d="M387 150 H317 C297 150 282 165 282 185 V275 C282 295 297 310 317 310 H387 V280 H327 C317 280 312 275 312 265 V195 C312 185 317 180 327 180 H387 Z" fill="#ffffff"/>
+</svg>
