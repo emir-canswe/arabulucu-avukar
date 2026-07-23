@@ -435,8 +435,8 @@
             </div>
         </section>
 
-        <!-- KONUM SECTION (Light Sky Blue Background) -->
-        <section class="py-24 bg-brand-sky/30 relative overflow-hidden" id="location">
+        <!-- KONUM SECTION (Light Background with Box Cards) -->
+        <section class="py-24 bg-[#f3f8fc] relative overflow-hidden" id="location">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 
                 <!-- Text / Service area details -->
@@ -444,31 +444,33 @@
                     <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-slate-900">İşletme Konumu</h2>
                     
                     <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                        <!-- Address Card -->
+                        <div class="bg-white border border-blue-100 shadow-sm rounded-2xl p-5 flex items-start gap-4 hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                            <div class="w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
                                 <span class="material-symbols-outlined">pin_drop</span>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-500">Adres</p>
-                                <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                                <p class="text-xs text-slate-500 font-medium mb-1">Adres</p>
+                                <p class="text-sm text-slate-800 font-semibold leading-relaxed">
                                     Prof. Selahattin Yazıcıoğlu Cad. Karakoç Plaza No:59 Yenişehir/Diyarbakır, 21100 Yenişehir/Diyarbakır
                                 </p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                        <!-- Service Regions Card -->
+                        <div class="bg-white border border-blue-100 shadow-sm rounded-2xl p-5 flex items-start gap-4 hover:shadow-md hover:border-brand-blue/30 transition-all duration-300">
+                            <div class="w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
                                 <span class="material-symbols-outlined">travel_explore</span>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-500">Hizmet Bölgeleri (Geçerli)</p>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Türkiye</span>
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Diyarbakır</span>
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Kulp</span>
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Ergani</span>
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Çınar</span>
-                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Çermik</span>
+                                <p class="text-xs text-slate-500 font-medium mb-2">Hizmet Bölgeleri</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Türkiye</span>
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Diyarbakır</span>
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Kulp</span>
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Ergani</span>
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Çınar</span>
+                                    <span class="px-3 py-1 rounded-lg bg-brand-blue/10 border border-brand-blue/20 text-xs text-brand-blue font-semibold">Çermik</span>
                                 </div>
                             </div>
                         </div>
@@ -498,47 +500,64 @@
             </div>
         </section>
 
-        <!-- ÇALIŞMA SAATLERİ SECTION (White Background) -->
+        <!-- ÇALIŞMA SAATLERİ SECTION (Light Background with Day Cards) -->
         <section class="py-24 bg-white relative overflow-hidden" id="hours">
             <div class="max-w-4xl mx-auto px-6">
-                <div class="glass-card-light bg-slate-50/50 rounded-[2.5rem] p-8 sm:p-12 border-blue-100 shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-8 opacity-[0.03]">
-                        <span class="material-symbols-outlined text-[120px] text-brand-blue">schedule</span>
-                    </div>
+                <div class="text-center space-y-3 mb-10">
+                    <h2 class="font-serif-custom text-3xl font-bold text-slate-900">Çalışma Saatleri</h2>
+                    <p class="text-slate-500 text-sm">Ofis çalışma günlerimiz ve mesai saatlerimiz aşağıdaki gibidir.</p>
+                </div>
 
-                    <div class="text-center space-y-4 mb-10">
-                        <h2 class="font-serif-custom text-3xl font-bold text-slate-900">Çalışma Saatleri</h2>
-                        <p class="text-slate-600 text-sm">Ofis çalışma günlerimiz ve mesai saatlerimiz aşağıdaki gibidir.</p>
-                    </div>
-
-                    <div class="max-w-md mx-auto divide-y divide-slate-100">
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Pazartesi</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                <div class="bg-[#f3f8fc] rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-sm">
+                    <div class="space-y-3">
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Pazartesi</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Salı</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Salı</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Çarşamba</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Çarşamba</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Perşembe</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Perşembe</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Cuma</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Cuma</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-slate-600 font-medium">Cumartesi</span>
-                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
+                        <div class="bg-white border border-blue-50 rounded-xl px-5 py-3.5 flex items-center justify-between hover:border-brand-blue/20 hover:shadow-sm transition-all duration-200">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+                                <span class="text-slate-700 font-medium">Cumartesi</span>
+                            </div>
+                            <span class="text-brand-blue font-bold text-sm">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3.5">
-                            <span class="text-red-500 font-medium">Pazar</span>
-                            <span class="text-red-500 font-bold uppercase tracking-wider">Kapalı</span>
+                        <div class="bg-red-50 border border-red-100 rounded-xl px-5 py-3.5 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                <span class="text-slate-700 font-medium">Pazar</span>
+                            </div>
+                            <span class="text-red-500 font-bold text-sm uppercase tracking-wider">Kapalı</span>
                         </div>
                     </div>
                 </div>
@@ -546,7 +565,7 @@
         </section>
 
         <!-- DIĞER SECTION (Diğer Detaylar, Olanaklar & Yasal Uyarı) -->
-        <section class="py-24 bg-brand-sky/20 relative overflow-hidden" id="other">
+        <section class="py-24 bg-[#f3f8fc] relative overflow-hidden" id="other">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Olanaklar / Erişim -->
                 <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 space-y-6 shadow-sm">
