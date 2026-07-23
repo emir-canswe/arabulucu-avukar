@@ -99,37 +99,61 @@
         .animate-shooting {
             animation: shooting 10s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
         }
+        /* Entrance Animations */
+        @keyframes fadeDown {
+            from { transform: translate(-50%, -50px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-fade-down {
+            animation: fadeDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
     </style>
 </head>
 <body class="selection:bg-brand-blue selection:text-white overflow-x-hidden antialiased bg-slate-50 text-slate-800">
 
     <!-- SUPASTE-STYLE FLOATING CAPSULE NAVBAR (Dark style from Supaste screenshot) -->
-    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50">
-        <div class="glass-card-dark bg-slate-950/95 px-6 py-3.5 rounded-full shadow-2xl flex items-center justify-between border border-white/10">
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50 animate-fade-down">
+        <div id="navbar-capsule" class="bg-white/80 text-slate-900 px-6 py-3.5 rounded-full shadow-lg flex items-center justify-between border border-white/40 transition-all duration-500">
             <!-- Brand Logo with uploaded business logo -->
             <a class="flex items-center gap-3 group" href="#home" id="nav-brand">
-                <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-9 h-9 rounded-full border border-white/20 object-cover shadow-md bg-white"/>
-                <span class="font-serif-custom font-semibold text-sm sm:text-base tracking-tight text-white group-hover:text-brand-blue transition-colors">Av. Arb. Zülfükar CAN</span>
+                <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-9 h-9 rounded-full border border-slate-200 object-cover shadow-md bg-white"/>
+                <span id="nav-brand-text" class="font-serif-custom font-semibold text-sm sm:text-base tracking-tight text-slate-900 transition-colors">Av. Arb. Zülfükar CAN</span>
             </a>
 
             <!-- Desktop Navigation Menu -->
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#about" id="link-about">Hakkında</a>
-                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#contact" id="link-contact">İletişim</a>
-                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#location" id="link-location">Konum</a>
-                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#hours" id="link-hours">Çalışma Saatleri</a>
-                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#other" id="link-other">Diğer</a>
+                <a class="nav-link nav-link-item text-slate-700 hover:text-brand-blue transition-colors" href="#about" id="link-about">Hakkında</a>
+                <a class="nav-link nav-link-item text-slate-700 hover:text-brand-blue transition-colors" href="#contact" id="link-contact">İletişim</a>
+                <a class="nav-link nav-link-item text-slate-700 hover:text-brand-blue transition-colors" href="#location" id="link-location">Konum</a>
+                <a class="nav-link nav-link-item text-slate-700 hover:text-brand-blue transition-colors" href="#hours" id="link-hours">Çalışma Saatleri</a>
+                <a class="nav-link nav-link-item text-slate-700 hover:text-brand-blue transition-colors" href="#other" id="link-other">Diğer</a>
             </nav>
 
             <!-- Actions / Call to Action -->
             <div class="flex items-center gap-3">
-                <a class="bg-white text-brand-navy hover:bg-brand-blue hover:text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-md" href="https://wa.me/905070161813" target="_blank" id="btn-whatsapp-nav">
+                <a id="btn-whatsapp-nav" class="bg-slate-950 text-white hover:bg-brand-blue px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-md" href="https://wa.me/905070161813" target="_blank">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                     <span>Sohbet Başlat</span>
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" id="mobile-menu-btn" aria-label="Menüyü Aç">
+                <button id="mobile-menu-btn" class="md:hidden text-slate-900 focus:outline-none transition-colors">
                     <span class="material-symbols-outlined text-2xl">menu</span>
                 </button>
             </div>
@@ -175,18 +199,18 @@
             <!-- Content -->
             <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+                    <div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 animate-fade-in-up" style="animation-delay: 0.1s;">
                         <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
                         <span class="text-brand-blue text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
                     </div>
-                    <h1 class="font-serif-custom text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    <h1 class="font-serif-custom text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight animate-fade-in-up" style="animation-delay: 0.3s;">
                         Arabulucu Avukat <br/>
                         <span class="text-brand-blue">Zülfükar CAN</span>
                     </h1>
-                    <p class="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    <p class="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up" style="animation-delay: 0.5s;">
                         Diyarbakır merkezli ofisimizden Türkiye genelinde güvenilir, gizlilik esaslı ve çözüm odaklı hukuki destek ve lisanslı arabuluculuk hizmetleri sunmaktayız.
                     </p>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.7s;">
                         <a class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg shadow-brand-blue/20 active:scale-95" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                             WhatsApp İletişim
@@ -198,7 +222,7 @@
                 </div>
 
                 <!-- Business Card (Kapak Fotoğrafı) showcase -->
-                <div class="lg:col-span-5 hidden lg:block">
+                <div class="lg:col-span-5 hidden lg:block animate-scale-in" style="animation-delay: 0.9s;">
                     <div class="glass-card-dark rounded-[2rem] p-4 border-white/10 shadow-2xl relative overflow-hidden animate-float-slow group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/10 to-transparent pointer-events-none"></div>
                         <img src="./cover.png" alt="Av. Arb. Zülfükar CAN Kartvizit / Kapak" class="w-full h-auto rounded-2xl shadow-lg border border-white/10 group-hover:scale-[1.02] transition-transform duration-500"/>
@@ -634,11 +658,74 @@
 
         // Auto-close menu when clicking outside on mobile
         document.addEventListener('click', function(event) {
+            if (!mobileMenuBtn || !mobileMenu) return;
             const isClickInside = mobileMenuBtn.contains(event.target) || mobileMenu.contains(event.target);
             if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
         });
+
+        // Dynamic Capsule Navbar Scroll Color Transitions
+        const navbar = document.getElementById('navbar-capsule');
+        const navBrandText = document.getElementById('nav-brand-text');
+        const navLinks = document.querySelectorAll('.nav-link-item');
+        const navBtn = document.getElementById('btn-whatsapp-nav');
+
+        function handleScroll() {
+            if (!navbar) return;
+            if (window.scrollY > 50) {
+                // Scrolled down -> Dark style
+                navbar.classList.remove('bg-white/80', 'text-slate-900', 'border-white/40', 'shadow-lg');
+                navbar.classList.add('bg-slate-950/95', 'text-white', 'border-white/10', 'shadow-2xl');
+
+                if (navBrandText) {
+                    navBrandText.classList.remove('text-slate-900');
+                    navBrandText.classList.add('text-white');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-slate-700', 'hover:text-brand-blue');
+                    link.classList.add('text-gray-300', 'hover:text-white');
+                });
+
+                if (navBtn) {
+                    navBtn.classList.remove('bg-slate-950', 'text-white', 'hover:bg-brand-blue');
+                    navBtn.classList.add('bg-white', 'text-brand-navy', 'hover:bg-brand-blue', 'hover:text-white');
+                }
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.classList.remove('text-slate-900');
+                    mobileMenuBtn.classList.add('text-white');
+                }
+            } else {
+                // Top of page (Hero section) -> White/light style
+                navbar.classList.add('bg-white/80', 'text-slate-900', 'border-white/40', 'shadow-lg');
+                navbar.classList.remove('bg-slate-950/95', 'text-white', 'border-white/10', 'shadow-2xl');
+
+                if (navBrandText) {
+                    navBrandText.classList.add('text-slate-900');
+                    navBrandText.classList.remove('text-white');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.add('text-slate-700', 'hover:text-brand-blue');
+                    link.classList.remove('text-gray-300', 'hover:text-white');
+                });
+
+                if (navBtn) {
+                    navBtn.classList.add('bg-slate-950', 'text-white', 'hover:bg-brand-blue');
+                    navBtn.classList.remove('bg-white', 'text-brand-navy', 'hover:bg-brand-blue', 'hover:text-white');
+                }
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.classList.add('text-slate-900');
+                    mobileMenuBtn.classList.remove('text-white');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
     </script>
 </body>
 </html>
