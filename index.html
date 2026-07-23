@@ -16,11 +16,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: "#031636",
-                            gold: "#c5a880",
-                            dark: "#0b121f",
-                            accent: "#e5c59e",
-                            light: "#f8fafc"
+                            navy: "#050b14", /* Pure dark for Hero */
+                            blue: "#0066ff", /* Vibrant Supaste Blue */
+                            sky: "#e0f2fe",  /* Light pastel blue background */
+                            accent: "#38bdf8", /* Sky blue accent */
+                            dark: "#080f1e"
                         }
                     },
                     fontFamily: {
@@ -40,18 +40,22 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b121f;
-            color: #f8fafc;
         }
         .font-serif-custom {
             font-family: 'Playfair Display', serif;
         }
-        /* Custom glassmorphism card */
-        .glass-card {
-            background: rgba(15, 23, 42, 0.65);
+        /* Custom glassmorphism card (dark and light variants) */
+        .glass-card-dark {
+            background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 102, 255, 0.08);
         }
         /* Floating animations */
         @keyframes float {
@@ -72,7 +76,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #c5a880;
+            background-color: #0066ff;
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
@@ -80,29 +84,29 @@
         }
     </style>
 </head>
-<body class="selection:bg-brand-gold selection:text-brand-navy overflow-x-hidden antialiased">
+<body class="selection:bg-brand-blue selection:text-white overflow-x-hidden antialiased bg-slate-50 text-slate-800">
 
-    <!-- SUPASTE-STYLE FLOATING CAPSULE NAVBAR -->
+    <!-- SUPASTE-STYLE FLOATING CAPSULE NAVBAR (Dark style from Supaste screenshot) -->
     <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50">
-        <div class="glass-card bg-brand-dark/90 px-6 py-3.5 rounded-full shadow-2xl flex items-center justify-between border border-white/10">
+        <div class="glass-card-dark bg-slate-950/95 px-6 py-3.5 rounded-full shadow-2xl flex items-center justify-between border border-white/10">
             <!-- Brand Logo with uploaded business logo -->
             <a class="flex items-center gap-3 group" href="#home" id="nav-brand">
-                <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-9 h-9 rounded-full border border-brand-gold/40 object-cover shadow-inner bg-white"/>
-                <span class="font-serif-custom font-semibold text-sm sm:text-base tracking-tight text-white group-hover:text-brand-gold transition-colors">Av. Arb. Zülfükar CAN</span>
+                <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-9 h-9 rounded-full border border-white/20 object-cover shadow-md bg-white"/>
+                <span class="font-serif-custom font-semibold text-sm sm:text-base tracking-tight text-white group-hover:text-brand-blue transition-colors">Av. Arb. Zülfükar CAN</span>
             </a>
 
             <!-- Desktop Navigation Menu -->
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                <a class="nav-link text-gray-300 hover:text-brand-gold transition-colors" href="#about" id="link-about">Hakkında</a>
-                <a class="nav-link text-gray-300 hover:text-brand-gold transition-colors" href="#contact" id="link-contact">İletişim</a>
-                <a class="nav-link text-gray-300 hover:text-brand-gold transition-colors" href="#location" id="link-location">Konum</a>
-                <a class="nav-link text-gray-300 hover:text-brand-gold transition-colors" href="#hours" id="link-hours">Çalışma Saatleri</a>
-                <a class="nav-link text-gray-300 hover:text-brand-gold transition-colors" href="#other" id="link-other">Diğer</a>
+                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#about" id="link-about">Hakkında</a>
+                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#contact" id="link-contact">İletişim</a>
+                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#location" id="link-location">Konum</a>
+                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#hours" id="link-hours">Çalışma Saatleri</a>
+                <a class="nav-link text-gray-300 hover:text-white transition-colors" href="#other" id="link-other">Diğer</a>
             </nav>
 
             <!-- Actions / Call to Action -->
             <div class="flex items-center gap-3">
-                <a class="bg-white text-brand-navy hover:bg-brand-gold hover:text-brand-navy px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-md" href="https://wa.me/905070161813" target="_blank" id="btn-whatsapp-nav">
+                <a class="bg-white text-brand-navy hover:bg-brand-blue hover:text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 transition-all duration-300 active:scale-95 shadow-md" href="https://wa.me/905070161813" target="_blank" id="btn-whatsapp-nav">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                     <span>Sohbet Başlat</span>
                 </a>
@@ -115,45 +119,44 @@
         </div>
 
         <!-- Mobile Expandable Menu (Hidden by default) -->
-        <div class="hidden mt-2 glass-card bg-brand-dark/95 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center border border-white/10 md:hidden" id="mobile-menu">
-            <a class="text-gray-200 hover:text-brand-gold py-2 text-base font-medium transition-colors" href="#about" onclick="toggleMobileMenu()">Hakkında</a>
-            <a class="text-gray-200 hover:text-brand-gold py-2 text-base font-medium transition-colors" href="#contact" onclick="toggleMobileMenu()">İletişim</a>
-            <a class="text-gray-200 hover:text-brand-gold py-2 text-base font-medium transition-colors" href="#location" onclick="toggleMobileMenu()">Konum</a>
-            <a class="text-gray-200 hover:text-brand-gold py-2 text-base font-medium transition-colors" href="#hours" onclick="toggleMobileMenu()">Çalışma Saatleri</a>
-            <a class="text-gray-200 hover:text-brand-gold py-2 text-base font-medium transition-colors" href="#other" onclick="toggleMobileMenu()">Diğer</a>
+        <div class="hidden mt-2 glass-card-dark bg-slate-950/95 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center border border-white/10 md:hidden" id="mobile-menu">
+            <a class="text-gray-200 hover:text-brand-blue py-2 text-base font-medium transition-colors" href="#about" onclick="toggleMobileMenu()">Hakkında</a>
+            <a class="text-gray-200 hover:text-brand-blue py-2 text-base font-medium transition-colors" href="#contact" onclick="toggleMobileMenu()">İletişim</a>
+            <a class="text-gray-200 hover:text-brand-blue py-2 text-base font-medium transition-colors" href="#location" onclick="toggleMobileMenu()">Konum</a>
+            <a class="text-gray-200 hover:text-brand-blue py-2 text-base font-medium transition-colors" href="#hours" onclick="toggleMobileMenu()">Çalışma Saatleri</a>
+            <a class="text-gray-200 hover:text-brand-blue py-2 text-base font-medium transition-colors" href="#other" onclick="toggleMobileMenu()">Diğer</a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Pure Dark Theme) -->
     <main>
-        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden" id="home">
-            <!-- Background Image with Overlay -->
+        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-navy" id="home">
+            <!-- Dark Background Elements -->
             <div class="absolute inset-0 z-0">
-                <img src="./law_office_interior.jpg" alt="Arabulucu Avukat Zülfükar CAN Ofis Detayı" class="w-full h-full object-cover object-center opacity-25 filter brightness-75 grayscale contrast-125"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
-                <div class="absolute inset-0 bg-radial-gradient(circle at center, transparent 30%, #0b121f 100%)"></div>
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-900 rounded-full blur-[120px]"></div>
             </div>
 
             <!-- Content -->
             <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-brand-gold/30">
-                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                        <span class="text-brand-accent text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
+                    <div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                        <span class="text-brand-blue text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
                     </div>
                     <h1 class="font-serif-custom text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         Arabulucu Avukat <br/>
-                        <span class="text-brand-gold">Zülfükar CAN</span>
+                        <span class="text-brand-blue">Zülfükar CAN</span>
                     </h1>
                     <p class="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
                         Diyarbakır merkezli ofisimizden Türkiye genelinde güvenilir, gizlilik esaslı ve çözüm odaklı hukuki destek ve lisanslı arabuluculuk hizmetleri sunmaktayız.
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                        <a class="bg-brand-gold hover:bg-brand-accent text-brand-navy px-8 py-4 rounded-xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg shadow-brand-gold/10 hover:shadow-brand-gold/20 active:scale-95" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
+                        <a class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg shadow-brand-blue/20 active:scale-95" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                             WhatsApp İletişim
                         </a>
-                        <a class="border border-white/20 hover:border-brand-gold text-white hover:text-brand-gold px-8 py-4 rounded-xl font-semibold backdrop-blur-sm transition-all duration-300" href="#about" id="hero-secondary-cta">
+                        <a class="border border-white/20 hover:border-brand-blue text-white hover:text-brand-blue px-8 py-4 rounded-xl font-semibold backdrop-blur-sm transition-all duration-300" href="#about" id="hero-secondary-cta">
                             Kurumsal Profil
                         </a>
                     </div>
@@ -161,8 +164,8 @@
 
                 <!-- Business Card (Kapak Fotoğrafı) showcase -->
                 <div class="lg:col-span-5 hidden lg:block">
-                    <div class="glass-card rounded-[2rem] p-4 border-white/10 shadow-2xl relative overflow-hidden animate-float-slow group">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-gold/10 to-transparent pointer-events-none"></div>
+                    <div class="glass-card-dark rounded-[2rem] p-4 border-white/10 shadow-2xl relative overflow-hidden animate-float-slow group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/10 to-transparent pointer-events-none"></div>
                         <img src="./cover.png" alt="Av. Arb. Zülfükar CAN Kartvizit / Kapak" class="w-full h-auto rounded-2xl shadow-lg border border-white/10 group-hover:scale-[1.02] transition-transform duration-500"/>
                         <div class="mt-4 flex justify-between items-center text-xs text-gray-400 px-2">
                             <span>Resmi Kartvizit Görünümü</span>
@@ -173,152 +176,157 @@
             </div>
         </section>
 
-        <!-- HAKKINDA SECTION -->
-        <section class="py-24 bg-brand-dark/50 relative overflow-hidden" id="about">
+        <!-- HAKKINDA SECTION (Light / Sky Blue Supaste Palette) -->
+        <section class="py-24 bg-white relative overflow-hidden" id="about">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Law themed graphic illustration side with Logo integration -->
                 <div class="relative flex justify-center">
-                    <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 group bg-brand-dark flex items-center justify-center p-8">
-                        <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logosu" class="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-700"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
+                    <div class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border border-slate-100 group bg-slate-100 flex items-center justify-center p-8">
+                        <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logosu" class="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-md"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-200/50 via-transparent to-transparent"></div>
                     </div>
                     <!-- Badge -->
-                    <div class="absolute -bottom-6 -right-6 glass-card bg-brand-navy p-6 rounded-2xl shadow-2xl border border-brand-gold/20 flex flex-col items-center justify-center text-center">
-                        <span class="font-serif-custom text-3xl font-bold text-brand-gold">2019</span>
-                        <span class="text-xs text-gray-300 uppercase tracking-widest mt-1">Hizmet Başlangıcı</span>
+                    <div class="absolute -bottom-6 -right-6 glass-card-light bg-brand-sky p-6 rounded-2xl shadow-2xl border border-brand-blue/20 flex flex-col items-center justify-center text-center">
+                        <span class="font-serif-custom text-3xl font-bold text-brand-blue">2019</span>
+                        <span class="text-xs text-slate-600 uppercase tracking-widest mt-1">Hizmet Başlangıcı</span>
                     </div>
                 </div>
 
                 <!-- Text Side -->
                 <div class="space-y-6">
-                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white" id="about-title">
+                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-slate-900" id="about-title">
                         Hakkımızda & Hukuki Misyon
                     </h2>
-                    <p class="text-gray-300 leading-relaxed">
+                    <p class="text-slate-600 leading-relaxed">
                         Arabulucu & Avukat Zülfükar CAN, Diyarbakır merkezli olarak hukuki danışmanlık, arabuluculuk ve avukatlık hizmetleri sunmaktadır. Ceza hukuku, aile hukuku, boşanma davaları, icra ve alacak işlemleri, iş hukuku, miras hukuku ve ticaret hukuku alanlarında profesyonel destek sağlanmaktadır.
                     </p>
-                    <p class="text-gray-300 leading-relaxed">
+                    <p class="text-slate-600 leading-relaxed">
                         Müvekkil odaklı yaklaşım, gizlilik ilkesi ve hızlı çözüm anlayışı ile Türkiye genelinde hukuki destek sunulmaktadır. Detaylı bilgi ve danışmanlık için bizimle her zaman iletişime geçebilirsiniz.
                     </p>
 
                     <!-- Expertise quick list -->
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-brand-gold">handshake</span>
-                            <span class="text-sm text-gray-200">Arabuluculuk</span>
+                            <span class="material-symbols-outlined text-brand-blue">handshake</span>
+                            <span class="text-sm text-slate-700 font-medium">Arabuluculuk</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-brand-gold">gavel</span>
-                            <span class="text-sm text-gray-200">Avukatlık Hizmeti</span>
+                            <span class="material-symbols-outlined text-brand-blue">gavel</span>
+                            <span class="text-sm text-slate-700 font-medium">Avukatlık Hizmeti</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-brand-gold">shield_lock</span>
-                            <span class="text-sm text-gray-200">Gizlilik İlkesi</span>
+                            <span class="material-symbols-outlined text-brand-blue">shield_lock</span>
+                            <span class="text-sm text-slate-700 font-medium">Gizlilik İlkesi</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-brand-gold">speed</span>
-                            <span class="text-sm text-gray-200">Hızlı Çözüm</span>
+                            <span class="material-symbols-outlined text-brand-blue">speed</span>
+                            <span class="text-sm text-slate-700 font-medium">Hızlı Çözüm</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- UZMANLIK ALANLARI SECTION -->
-        <section class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- UZMANLIK ALANLARI SECTION (Sky Blue Background) -->
+        <section class="py-24 bg-brand-sky/40 relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                    <h3 class="font-serif-custom text-3xl font-bold text-white">Faaliyet ve Uzmanlık Alanları</h3>
-                    <p class="text-gray-400 text-sm sm:text-base">
+                    <h3 class="font-serif-custom text-3xl font-bold text-slate-900">Faaliyet ve Uzmanlık Alanları</h3>
+                    <p class="text-slate-600 text-sm sm:text-base">
                         Hak ve adaleti rehber edinerek, müvekkillerimize her adımda kurumsal ve hukuki güvence sağlıyoruz.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">gavel</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">Ceza Hukuku</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Soruşturma ve kovuşturma aşamalarında profesyonel savunma ve ceza hukuku süreçlerinin titizlikle takibi.</p>
+                            <h4 class="text-lg font-bold text-slate-900">Ceza Hukuku</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Soruşturma ve kovuşturma aşamalarında profesyonel savunma ve ceza hukuku süreçlerinin titizlikle takibi.</p>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">family_restroom</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">Aile ve Boşanma Hukuku</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Boşanma, mal paylaşımı, nafaka, velayet ve soybağı uyuşmazlıklarında hukuki süreçlerin yönetilmesi.</p>
+                            <h4 class="text-lg font-bold text-slate-900">Aile ve Boşanma Hukuku</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Boşanma, mal paylaşımı, nafaka, velayet ve soybağı uyuşmazlıklarında hukuki süreçlerin yönetilmesi.</p>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">handshake</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">Arabuluculuk Hizmetleri</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Taraflar arasındaki uyuşmazlıkların hızlı, tarafsız ve mahkeme masrafları olmaksızın çözümü.</p>
+                            <h4 class="text-lg font-bold text-slate-900">Arabuluculuk Hizmetleri</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Taraflar arasındaki uyuşmazlıkların hızlı, tarafsız ve mahkeme masrafları olmaksızın çözümü.</p>
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">payments</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">İcra ve Alacak Takibi</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Alacakların yasal yollarla tahsili, borçlulara yönelik icra takipleri ve itiraz süreçlerinin yönetimi.</p>
+                            <h4 class="text-lg font-bold text-slate-900">İcra ve Alacak Takibi</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Alacakların yasal yollarla tahsili, borçlulara yönelik icra takipleri ve itiraz süreçlerinin yönetimi.</p>
                         </div>
                     </div>
                     <!-- Card 5 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">badge</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">İş Hukuku</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">İşe iade, kıdem ve ihbar tazminatları, iş kazaları ve iş sözleşmelerinden doğan haklar.</p>
+                            <h4 class="text-lg font-bold text-slate-900">İş Hukuku</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">İşe iade, kıdem ve ihbar tazminatları, iş kazaları ve iş sözleşmelerinden doğan haklar.</p>
                         </div>
                     </div>
                     <!-- Card 6 -->
-                    <div class="glass-card p-8 rounded-3xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-md">
                         <div class="space-y-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 <span class="material-symbols-outlined text-2xl">history_edu</span>
                             </div>
-                            <h4 class="text-lg font-bold text-white">Miras ve Ticaret Hukuku</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">Veraset ilamı, vasiyetnameler, tenkis davaları ve kurumsal şirketler için ticari danışmanlık.</p>
+                            <h4 class="text-lg font-bold text-slate-900">Miras ve Ticaret Hukuku</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Veraset ilamı, vasiyetnameler, tenkis davaları ve kurumsal şirketler için ticari danışmanlık.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ILETISIM SECTION -->
-        <section class="py-24 bg-brand-dark/50 relative overflow-hidden" id="contact">
-            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                
+        <!-- ILETISIM SECTION (Vibrant Supaste Blue Gradient Background) -->
+        <section class="py-24 bg-gradient-to-tr from-blue-700 via-brand-blue to-blue-500 relative overflow-hidden text-white" id="contact">
+            <!-- White decorative blobs -->
+            <div class="absolute inset-0 z-0 opacity-10">
+                <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-white blur-[150px]"></div>
+                <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-white blur-[150px]"></div>
+            </div>
+
+            <div class="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <!-- Contact Details -->
                 <div class="lg:col-span-6 space-y-8">
                     <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white">İletişim Bilgileri</h2>
-                    <p class="text-gray-300">
+                    <p class="text-blue-100">
                         Hukuki danışmanlık almak, dava süreçlerinizle ilgili bilgi edinmek veya arabuluculuk talebinde bulunmak için bizimle doğrudan iletişime geçebilirsiniz.
                     </p>
 
                     <div class="space-y-6">
                         <!-- Phone -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 shrink-0">
                                 <span class="material-symbols-outlined">call</span>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-400">Telefon Numarası</p>
-                                <a href="tel:05070161813" class="text-lg font-semibold text-white hover:text-brand-gold transition-colors">
+                                <p class="text-xs text-blue-200">Telefon Numarası</p>
+                                <a href="tel:05070161813" class="text-lg font-semibold text-white hover:text-blue-200 transition-colors">
                                     0507 016 18 13
                                 </a>
                             </div>
@@ -326,12 +334,12 @@
 
                         <!-- Email -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 shrink-0">
                                 <span class="material-symbols-outlined">mail</span>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-400">E-Posta Adresi</p>
-                                <a href="mailto:av.zulfukarcan@hotmail.com" class="text-lg font-semibold text-white hover:text-brand-gold transition-colors">
+                                <p class="text-xs text-blue-200">E-Posta Adresi</p>
+                                <a href="mailto:av.zulfukarcan@hotmail.com" class="text-lg font-semibold text-white hover:text-blue-200 transition-colors">
                                     av.zulfukarcan@hotmail.com
                                 </a>
                             </div>
@@ -339,12 +347,12 @@
 
                         <!-- Whatsapp -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white border border-white/20 shrink-0">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-400">Hızlı Sohbet & WhatsApp</p>
-                                <a href="https://wa.me/905070161813" target="_blank" class="text-lg font-semibold text-white hover:text-brand-gold transition-colors">
+                                <p class="text-xs text-blue-200">Hızlı Sohbet & WhatsApp</p>
+                                <a href="https://wa.me/905070161813" target="_blank" class="text-lg font-semibold text-white hover:text-blue-200 transition-colors">
                                     wa.me/905070161813
                                 </a>
                             </div>
@@ -352,20 +360,20 @@
                     </div>
                 </div>
 
-                <!-- Premium Form / Box -->
-                <div class="lg:col-span-6 w-full glass-card p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6">
+                <!-- Premium White Frosted glass form -->
+                <div class="lg:col-span-6 w-full bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-3xl shadow-2xl space-y-6">
                     <h3 class="font-serif-custom text-xl font-bold text-white">Bizimle Randevu Oluşturun</h3>
                     
                     <form class="space-y-4" onsubmit="event.preventDefault(); window.open('https://wa.me/905070161813?text=' + encodeURIComponent('Randevu talebi: ' + document.getElementById('client-name').value + ' - ' + document.getElementById('client-msg').value), '_blank')">
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2" for="client-name">Adınız Soyadınız</label>
-                            <input class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors" id="client-name" placeholder="Mehmet Yılmaz" required type="text"/>
+                            <label class="block text-xs font-semibold text-blue-100 uppercase tracking-wider mb-2" for="client-name">Adınız Soyadınız</label>
+                            <input class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors" id="client-name" placeholder="Mehmet Yılmaz" required type="text"/>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2" for="client-msg">Hukuki Konu / Mesajınız</label>
-                            <textarea class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors" id="client-msg" placeholder="Lütfen hukuki uyuşmazlığınız hakkında kısa bir açıklama yazınız..." required rows="4"></textarea>
+                            <label class="block text-xs font-semibold text-blue-100 uppercase tracking-wider mb-2" for="client-msg">Hukuki Konu / Mesajınız</label>
+                            <textarea class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors" id="client-msg" placeholder="Lütfen hukuki uyuşmazlığınız hakkında kısa bir açıklama yazınız..." required rows="4"></textarea>
                         </div>
-                        <button class="w-full bg-brand-gold hover:bg-brand-accent text-brand-navy font-bold py-4 rounded-xl transition-all duration-300 active:scale-98 flex items-center justify-center gap-2" type="submit">
+                        <button class="w-full bg-white hover:bg-brand-sky text-brand-blue font-bold py-4 rounded-xl transition-all duration-300 active:scale-98 flex items-center justify-center gap-2 shadow-lg" type="submit">
                             <span class="material-symbols-outlined">send</span>
                             WhatsApp ile Randevu Gönder
                         </button>
@@ -374,40 +382,40 @@
             </div>
         </section>
 
-        <!-- KONUM SECTION -->
-        <section class="py-24 bg-brand-dark relative overflow-hidden" id="location">
+        <!-- KONUM SECTION (Light Sky Blue Background) -->
+        <section class="py-24 bg-brand-sky/30 relative overflow-hidden" id="location">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 
                 <!-- Text / Service area details -->
                 <div class="lg:col-span-5 space-y-6">
-                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white">İşletme Konumu</h2>
+                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-slate-900">İşletme Konumu</h2>
                     
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                            <div class="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
                                 <span class="material-symbols-outlined">pin_drop</span>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-400">Adres</p>
-                                <p class="text-sm text-gray-200 font-medium">
+                                <p class="text-xs text-slate-500">Adres</p>
+                                <p class="text-sm text-slate-700 font-medium leading-relaxed">
                                     Prof. Selahattin Yazıcıoğlu Cad. Karakoç Plaza No:59 Yenişehir/Diyarbakır, 21100 Yenişehir/Diyarbakır
                                 </p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                            <div class="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
                                 <span class="material-symbols-outlined">travel_explore</span>
                             </div>
                             <div>
-                                <p class="text-xs text-gray-400">Hizmet Bölgeleri (Geçerli)</p>
+                                <p class="text-xs text-slate-500">Hizmet Bölgeleri (Geçerli)</p>
                                 <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Türkiye</span>
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Diyarbakır</span>
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Kulp</span>
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Ergani</span>
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Çınar</span>
-                                    <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-gray-300">Çermik</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Türkiye</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Diyarbakır</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Kulp</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Ergani</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Çınar</span>
+                                    <span class="px-2.5 py-1 rounded bg-white border border-blue-100 text-xs text-slate-600 font-medium">Çermik</span>
                                 </div>
                             </div>
                         </div>
@@ -415,19 +423,19 @@
                 </div>
 
                 <!-- Custom Map Box with photo overlay -->
-                <div class="lg:col-span-7 relative h-[400px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="./diyarbakir_city.jpg" alt="Diyarbakır Kent Görünümü" class="w-full h-full object-cover opacity-40"/>
-                    <div class="absolute inset-0 bg-brand-dark/30"></div>
+                <div class="lg:col-span-7 relative h-[400px] w-full rounded-3xl overflow-hidden border border-blue-100 shadow-xl">
+                    <img src="./diyarbakir_city.jpg" alt="Diyarbakır Kent Görünümü" class="w-full h-full object-cover opacity-60"/>
+                    <div class="absolute inset-0 bg-blue-900/10"></div>
                     <!-- Custom Map Card Overlay -->
-                    <div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-2xl border border-brand-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="absolute bottom-6 left-6 right-6 glass-card-light bg-white/95 p-6 rounded-2xl border border-brand-blue/20 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
                         <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-brand-gold text-3xl shrink-0">location_on</span>
+                            <span class="material-symbols-outlined text-brand-blue text-3xl shrink-0">location_on</span>
                             <div>
-                                <p class="font-serif-custom text-base font-bold text-white">Karakoç Plaza</p>
-                                <p class="text-xs text-gray-300">Yenişehir / Diyarbakır</p>
+                                <p class="font-serif-custom text-base font-bold text-slate-900">Karakoç Plaza</p>
+                                <p class="text-xs text-slate-500">Yenişehir / Diyarbakır</p>
                             </div>
                         </div>
-                        <a class="bg-brand-gold hover:bg-brand-accent text-brand-navy text-xs font-bold px-4 py-2.5 rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-1.5" href="https://maps.google.com/?q=Karakoç+Plaza+Yenişehir+Diyarbakır" target="_blank">
+                        <a class="bg-brand-blue hover:bg-blue-600 text-white text-xs font-bold px-5 py-3 rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-1.5 shadow-md shadow-brand-blue/20" href="https://maps.google.com/?q=Karakoç+Plaza+Yenişehir+Diyarbakır" target="_blank">
                             <span class="material-symbols-outlined text-sm">map</span>
                             Yol Tarifi Al
                         </a>
@@ -437,47 +445,47 @@
             </div>
         </section>
 
-        <!-- ÇALIŞMA SAATLERİ SECTION -->
-        <section class="py-24 bg-brand-dark/50 relative overflow-hidden" id="hours">
+        <!-- ÇALIŞMA SAATLERİ SECTION (White Background) -->
+        <section class="py-24 bg-white relative overflow-hidden" id="hours">
             <div class="max-w-4xl mx-auto px-6">
-                <div class="glass-card rounded-[2.5rem] p-8 sm:p-12 border-white/10 shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-8 opacity-10">
-                        <span class="material-symbols-outlined text-[120px] text-brand-gold">schedule</span>
+                <div class="glass-card-light bg-slate-50/50 rounded-[2.5rem] p-8 sm:p-12 border-blue-100 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-[0.03]">
+                        <span class="material-symbols-outlined text-[120px] text-brand-blue">schedule</span>
                     </div>
 
                     <div class="text-center space-y-4 mb-10">
-                        <h2 class="font-serif-custom text-3xl font-bold text-white">Çalışma Saatleri</h2>
-                        <p class="text-gray-400 text-sm">Ofis çalışma günlerimiz ve mesai saatlerimiz aşağıdaki gibidir.</p>
+                        <h2 class="font-serif-custom text-3xl font-bold text-slate-900">Çalışma Saatleri</h2>
+                        <p class="text-slate-600 text-sm">Ofis çalışma günlerimiz ve mesai saatlerimiz aşağıdaki gibidir.</p>
                     </div>
 
-                    <div class="max-w-md mx-auto divide-y divide-white/10">
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Pazartesi</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                    <div class="max-w-md mx-auto divide-y divide-slate-100">
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Pazartesi</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Salı</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Salı</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Çarşamba</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Çarşamba</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Perşembe</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Perşembe</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Cuma</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Cuma</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-gray-300 font-medium">Cumartesi</span>
-                            <span class="text-brand-gold font-semibold">09:00 – 17:00</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-slate-600 font-medium">Cumartesi</span>
+                            <span class="text-brand-blue font-bold">09:00 – 17:00</span>
                         </div>
-                        <div class="flex justify-between py-3">
-                            <span class="text-red-400 font-medium">Pazar</span>
-                            <span class="text-red-400 font-semibold uppercase tracking-wider">Kapalı</span>
+                        <div class="flex justify-between py-3.5">
+                            <span class="text-red-500 font-medium">Pazar</span>
+                            <span class="text-red-500 font-bold uppercase tracking-wider">Kapalı</span>
                         </div>
                     </div>
                 </div>
@@ -485,39 +493,39 @@
         </section>
 
         <!-- DIĞER SECTION (Diğer Detaylar, Olanaklar & Yasal Uyarı) -->
-        <section class="py-24 bg-brand-dark relative overflow-hidden" id="other">
+        <section class="py-24 bg-brand-sky/20 relative overflow-hidden" id="other">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Olanaklar / Erişim -->
-                <div class="glass-card p-8 rounded-3xl border border-white/5 space-y-6">
-                    <h3 class="font-serif-custom text-xl font-bold text-white flex items-center gap-2">
-                        <span class="material-symbols-outlined text-brand-gold">accessibility_new</span>
+                <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 space-y-6 shadow-sm">
+                    <h3 class="font-serif-custom text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-brand-blue">accessibility_new</span>
                         Sunulan Olanaklar & Erişim
                     </h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <p class="text-slate-600 text-sm leading-relaxed">
                         Ofisimizde müvekkillerimizin en iyi şekilde ağırlanması için hijyen ve temel kolaylıklar sağlanmıştır.
                     </p>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                            <span class="material-symbols-outlined text-brand-gold">wc</span>
-                            <span class="text-sm text-gray-200">Engelli Erişimine / Standart Kullanıma Uygun Tuvalet Var</span>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="material-symbols-outlined text-brand-blue">wc</span>
+                            <span class="text-sm text-slate-700 font-medium">Engelli Erişimine / Standart Kullanıma Uygun Tuvalet Var</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                            <span class="material-symbols-outlined text-brand-gold">business</span>
-                            <span class="text-sm text-gray-200">Asansörlü & Plaza Güvenlikli Çalışma Ortamı</span>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <span class="material-symbols-outlined text-brand-blue">business</span>
+                            <span class="text-sm text-slate-700 font-medium">Asansörlü & Plaza Güvenlikli Çalışma Ortamı</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Kurumsal Bilgi / Sorumluluk Reddi -->
-                <div class="glass-card p-8 rounded-3xl border border-white/5 space-y-6">
-                    <h3 class="font-serif-custom text-xl font-bold text-white flex items-center gap-2">
-                        <span class="material-symbols-outlined text-brand-gold">policy</span>
+                <div class="glass-card-light bg-white p-8 rounded-3xl border border-blue-100 space-y-6 shadow-sm">
+                    <h3 class="font-serif-custom text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-brand-blue">policy</span>
                         Yasal Uyarı / Bilgilendirme
                     </h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
                         Bu internet sitesinde yer alan tüm bilgiler ve makaleler Türkiye Barolar Birliği'nin meslek kuralları uyarınca tamamen bilgilendirme amaçlı hazırlanmıştır. Reklam amacı taşımamaktadır.
                     </p>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
                         Sitedeki içerikler hukuki danışmanlık teşkil etmez, uyuşmazlığın durumuna göre farklı hukuki çözümler gerekebilir.
                     </p>
                 </div>
@@ -525,16 +533,16 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark border-t border-white/10 py-12 relative overflow-hidden">
+    <!-- FOOTER (Deep Navy style matching Hero) -->
+    <footer class="bg-brand-navy border-t border-white/5 py-12 relative overflow-hidden text-slate-400">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Col 1 -->
             <div class="space-y-4">
                 <a class="flex items-center gap-3" href="#">
-                    <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-8 h-8 rounded-full border border-brand-gold/40 object-cover bg-white"/>
+                    <img src="./logo.jpg" alt="Av. Arb. Zülfükar CAN Logo" class="w-8 h-8 rounded-full border border-white/20 object-cover bg-white"/>
                     <span class="font-serif-custom font-semibold text-lg tracking-tight text-white">Av. Arb. Zülfükar CAN</span>
                 </a>
-                <p class="text-gray-400 text-xs leading-relaxed">
+                <p class="text-xs leading-relaxed">
                     Diyarbakır merkezli bağımsız, tarafsız ve hukukun üstünlüğü ilkesine dayalı avukatlık ve arabuluculuk.
                 </p>
             </div>
@@ -542,29 +550,29 @@
             <!-- Col 2 -->
             <div class="space-y-4">
                 <h4 class="text-sm font-semibold text-white uppercase tracking-wider">Hızlı Erişim</h4>
-                <div class="flex flex-col gap-2 text-xs text-gray-400">
-                    <a class="hover:text-brand-gold transition-colors" href="#about">Hakkında</a>
-                    <a class="hover:text-brand-gold transition-colors" href="#contact">İletişim</a>
-                    <a class="hover:text-brand-gold transition-colors" href="#location">Konum</a>
-                    <a class="hover:text-brand-gold transition-colors" href="#hours">Çalışma Saatleri</a>
-                    <a class="hover:text-brand-gold transition-colors" href="#other">Diğer Detaylar</a>
+                <div class="flex flex-col gap-2 text-xs">
+                    <a class="hover:text-white transition-colors" href="#about">Hakkında</a>
+                    <a class="hover:text-white transition-colors" href="#contact">İletişim</a>
+                    <a class="hover:text-white transition-colors" href="#location">Konum</a>
+                    <a class="hover:text-white transition-colors" href="#hours">Çalışma Saatleri</a>
+                    <a class="hover:text-white transition-colors" href="#other">Diğer Detaylar</a>
                 </div>
             </div>
 
             <!-- Col 3 -->
             <div class="space-y-4">
                 <h4 class="text-sm font-semibold text-white uppercase tracking-wider">Randevu ve Bilgi</h4>
-                <p class="text-gray-400 text-xs">
+                <p class="text-xs">
                     Doğrudan randevu almak ve dosya detaylarınızı görüşmek için WhatsApp hattımız aktiftir.
                 </p>
-                <a href="https://wa.me/905070161813" target="_blank" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-accent text-brand-navy text-xs font-bold px-4 py-2 rounded-xl transition-all duration-300">
-                    <svg class="w-4 h-4 fill-current text-brand-navy" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
+                <a href="https://wa.me/905070161813" target="_blank" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all duration-300 shadow-md shadow-brand-blue/20">
+                    <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                     WhatsApp Sohbet Başlat
                 </a>
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 border-t border-white/5 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div class="max-w-6xl mx-auto px-6 border-t border-white/5 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>© 2026 Arabulucu Avukat Zülfükar CAN. Tüm Hakları Saklıdır.</p>
             <p>Diyarbakır Barosu / Avukatlık Hizmetleri</p>
         </div>
