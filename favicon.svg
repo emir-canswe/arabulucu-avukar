@@ -1,18 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
-  <!-- Navy Blue Background Shape -->
-  <rect width="512" height="512" rx="128" fill="#031636"/>
+  <!-- Deep Royal Navy Background with Rounded Corners -->
+  <rect width="512" height="512" rx="128" fill="#050b14"/>
   
-  <!-- Financial chart / Accounting accent in Gold -->
-  <path d="M116 350 H276 L396 250" fill="none" stroke="#c5a880" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M346 250 H396 V300" fill="none" stroke="#c5a880" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Stylized "IFC" Monogram in White -->
-  <!-- Letter I -->
-  <path d="M117 150 H147 V310 H117 Z" fill="#ffffff"/>
-  
-  <!-- Letter F -->
-  <path d="M187 150 H267 V180 H217 V215 H257 V245 H217 V310 H187 Z" fill="#ffffff"/>
-  
-  <!-- Letter C -->
-  <path d="M387 150 H317 C297 150 282 165 282 185 V275 C282 295 297 310 317 310 H387 V280 H327 C317 280 312 275 312 265 V195 C312 185 317 180 327 180 H387 Z" fill="#ffffff"/>
+  <!-- Outer Gold Ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#fef3c7" stroke-width="8" opacity="0.5"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#0066ff" stroke-width="12" opacity="0.6"/>
+
+  <!-- Golden Scales of Justice Icon -->
+  <g fill="#fef3c7" stroke="#fef3c7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center Beam Pillar -->
+    <rect x="246" y="100" width="20" height="280" rx="10"/>
+    <!-- Base -->
+    <path d="M150 380 H362 A 10 10 0 0 1 362 400 H150 A 10 10 0 0 1 150 380 Z"/>
+    <path d="M190 350 H322 L332 380 H180 Z"/>
+    
+    <!-- Top Ornament -->
+    <circle cx="256" cy="90" r="20"/>
+
+    <!-- Crossbeam -->
+    <path d="M90 150 Q 256 120 422 150" fill="none" stroke-width="18"/>
+
+    <!-- Left Scale Chain & Pan -->
+    <line x1="90" y1="150" x2="60" y2="260" stroke-width="6"/>
+    <line x1="90" y1="150" x2="150" y2="260" stroke-width="6"/>
+    <path d="M40 260 C 40 310, 170 310, 170 260 Z" stroke-width="6"/>
+
+    <!-- Right Scale Chain & Pan -->
+    <line x1="422" y1="150" x2="362" y2="260" stroke-width="6"/>
+    <line x1="422" y1="150" x2="452" y2="260" stroke-width="6"/>
+    <path d="M342 260 C 342 310, 472 310, 472 260 Z" stroke-width="6"/>
+  </g>
 </svg>
