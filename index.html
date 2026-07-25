@@ -20,8 +20,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     </noscript>
 
-    <!-- Tailwind CSS with plugins (defer to unblock initial render) -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" defer></script>
+    <!-- Tailwind CSS with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -240,9 +240,9 @@
 
     <!-- HERO SECTION (Pure Dark Theme) -->
     <main>
-        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-navy" id="home">
+        <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#050b14] text-white" style="background-color: #050b14; color: #ffffff;" id="home">
             <!-- Dark Background Elements with Animated Ambient Mesh & Fine Cyber Grid -->
-            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#050b14]" style="background-color: #050b14;">
                 <!-- Glowing Ambient Aurora Mesh Orbs -->
                 <div class="absolute top-[-10%] left-[10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[150px] animate-mesh-1"></div>
                 <div class="absolute bottom-[-10%] right-[10%] w-[700px] h-[700px] bg-amber-500/15 rounded-full blur-[170px] animate-mesh-2"></div>
@@ -298,23 +298,23 @@
             <!-- Content -->
             <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
-                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
-                        <span class="text-brand-blue text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
+                    <div class="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span class="text-sky-300 text-xs font-semibold uppercase tracking-wider">Hukuki Danışmanlık & Arabuluculuk</span>
                     </div>
                     <h1 class="font-serif-custom text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         Arabulucu Avukat <br/>
-                        <span class="text-brand-blue">Zülfükar CAN</span>
+                        <span class="text-blue-500">Zülfükar CAN</span>
                     </h1>
-                    <p class="text-gray-100 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                    <p class="text-slate-200 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
                         Diyarbakır merkezli ofisimizden Türkiye genelinde güvenilir, gizlilik esaslı ve çözüm odaklı hukuki destek ve lisanslı arabuluculuk hizmetleri sunmaktayız.
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                        <a class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg shadow-brand-blue/20 active:scale-95" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg shadow-blue-500/25 active:scale-95 text-base" href="https://wa.me/905070161813" target="_blank" id="hero-cta-whatsapp">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
                             WhatsApp İletişim
                         </a>
-                        <a class="border border-white/20 hover:border-brand-blue text-white hover:text-brand-blue px-8 py-4 rounded-xl font-semibold backdrop-blur-sm transition-all duration-300" href="#about" id="hero-secondary-cta">
+                        <a class="border border-white/20 hover:border-blue-500 text-white hover:text-blue-400 bg-white/5 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-base" href="#about" id="hero-secondary-cta">
                             Kurumsal Profil
                         </a>
                     </div>
