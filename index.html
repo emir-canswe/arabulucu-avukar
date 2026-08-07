@@ -172,8 +172,16 @@
                     <path d="M 20,0 Q 0,0 0,20 L 0,0 Z"></path>
                 </svg>
 
-                <!-- COL 1 (LEFT): Navigation Links (Desktop) -->
-                <nav class="hidden md:flex items-center gap-5 lg:gap-6 justify-start">
+                <!-- COL 1 (LEFT): Brand Logo & Title -->
+                <a class="flex items-center justify-start gap-2 sm:gap-2.5 group shrink-0" href="#home" id="nav-brand">
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-slate-900 group-hover:bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md transition-colors duration-300">
+                        <span class="material-symbols-outlined text-base sm:text-lg text-emerald-400 group-hover:text-white transition-colors">balance</span>
+                    </div>
+                    <span id="nav-brand-text" class="font-serif-custom font-bold text-xs sm:text-base tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors whitespace-nowrap">Av. Arb. Zülfükar CAN</span>
+                </a>
+
+                <!-- COL 2 (CENTER): Navigation Links -->
+                <nav class="hidden md:flex items-center gap-5 lg:gap-6 justify-center mx-auto">
                     <a class="nav-link-item text-slate-600 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#about">
                         <span>Hakkında</span>
                         <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
@@ -185,14 +193,6 @@
                     <a class="nav-link-item text-slate-600 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors" href="#location">Konum</a>
                     <a class="nav-link-item text-slate-600 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors" href="#hours">Çalışma Saatleri</a>
                 </nav>
-
-                <!-- COL 2 (CENTER): Brand Logo & Title -->
-                <a class="flex items-center justify-start md:justify-center gap-2 sm:gap-2.5 group shrink-0" href="#home" id="nav-brand">
-                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-slate-900 group-hover:bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md transition-colors duration-300">
-                        <span class="material-symbols-outlined text-base sm:text-lg text-emerald-400 group-hover:text-white transition-colors">balance</span>
-                    </div>
-                    <span id="nav-brand-text" class="font-serif-custom font-bold text-xs sm:text-base tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors whitespace-nowrap">Av. Arb. Zülfükar CAN</span>
-                </a>
 
                 <!-- COL 3 (RIGHT): Phone Link & CTA & Mobile Button -->
                 <div class="flex items-center justify-end gap-2 sm:gap-3.5 shrink-0">
