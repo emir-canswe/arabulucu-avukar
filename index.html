@@ -5,6 +5,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Arabulucu Avukat Zülfükar CAN | Diyarbakır Hukuki Danışmanlık & Arabuluculuk</title>
     <meta name="description" content="Arabulucu & Avukat Zülfükar CAN, Diyarbakır merkezli olarak ceza hukuku, aile hukuku, boşanma, icra, iş, miras ve ticaret hukuku alanlarında profesyonel hukuki danışmanlık ve arabuluculuk hizmetleri sunmaktadır."/>
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
 
     <!-- Resource Preconnects for Maximum Speed & Performance -->
@@ -175,64 +180,77 @@
 </head>
 <body class="selection:bg-brand-blue selection:text-white overflow-x-hidden antialiased bg-slate-50 text-slate-800">
 
-    <!-- FLOATING LIGHT CAPSULE NAVBAR (Exact Match to User Reference Screenshot) -->
-    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 animate-fade-down">
-        <div id="navbar-capsule" class="bg-white/95 backdrop-blur-md text-slate-900 px-5 py-2.5 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.12)] flex items-center justify-between border border-slate-200/80 transition-all duration-500">
+    <!-- SOLIDROAD STYLE TOP NOTCH NAVBAR HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+        <!-- Top Thin White Strip spanning across viewport top -->
+        <div class="w-full bg-white h-2 sm:h-3 pointer-events-auto"></div>
 
-            <!-- LEFT: Blue Icon + Brand Name -->
-            <a class="flex items-center gap-2.5 shrink-0" href="#home" id="nav-brand">
-                <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-blue-500/20">
-                    <span class="material-symbols-outlined text-lg">balance</span>
+        <!-- Center Floating Notch Container -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 relative flex justify-center pointer-events-auto">
+            <div id="navbar-capsule" class="relative bg-white text-slate-900 px-5 sm:px-7 py-2.5 sm:py-3 rounded-b-[24px] shadow-[0_12px_35px_rgba(0,0,0,0.12)] flex items-center justify-between w-full border-b border-x border-slate-200/80 transition-all duration-300">
+                
+                <!-- Left Inverted Notch Concave SVG Corner -->
+                <svg class="absolute top-0 -left-6 w-6 h-6 text-white fill-current pointer-events-none" viewBox="0 0 24 24">
+                    <path d="M 0,0 Q 24,0 24,24 L 24,0 Z"></path>
+                </svg>
+
+                <!-- Right Inverted Notch Concave SVG Corner -->
+                <svg class="absolute top-0 -right-6 w-6 h-6 text-white fill-current pointer-events-none" viewBox="0 0 24 24">
+                    <path d="M 24,0 Q 0,0 0,24 L 0,0 Z"></path>
+                </svg>
+
+                <!-- LEFT: Navigation Links (Solidroad Products/Customers style) -->
+                <nav class="hidden md:flex items-center gap-4 lg:gap-6">
+                    <a class="nav-link-item text-slate-700 hover:text-slate-950 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#about">
+                        <span>Hakkında</span>
+                        <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
+                    </a>
+                    <a class="nav-link-item text-slate-700 hover:text-slate-950 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#contact">
+                        <span>İletişim</span>
+                        <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
+                    </a>
+                    <a class="nav-link-item text-slate-700 hover:text-slate-950 text-xs sm:text-sm font-medium transition-colors" href="#location">Konum</a>
+                    <a class="nav-link-item text-slate-700 hover:text-slate-950 text-xs sm:text-sm font-medium transition-colors" href="#hours">Çalışma Saatleri</a>
+                </nav>
+
+                <!-- CENTER: Brand Logo & Title (Solidroad Logo placement) -->
+                <a class="flex items-center gap-2.5 shrink-0" href="#home" id="nav-brand">
+                    <div class="w-8 h-8 rounded-xl bg-slate-950 flex items-center justify-center text-white shrink-0 shadow-md">
+                        <span class="material-symbols-outlined text-lg text-emerald-400">balance</span>
+                    </div>
+                    <span id="nav-brand-text" class="font-serif-custom font-bold text-base sm:text-lg tracking-tight text-slate-950 whitespace-nowrap">Av. Arb. Zülfükar CAN</span>
+                </a>
+
+                <!-- RIGHT: Phone Link & Green Pill CTA Button (Solidroad "See a demo ->" style) -->
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="tel:05070161813" class="hidden lg:block text-xs sm:text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors" id="nav-phone-link">0507 016 18 13</a>
+                    
+                    <a id="btn-whatsapp-nav" class="bg-emerald-500 hover:bg-emerald-600 text-white font-medium text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full items-center gap-2 shadow-md shadow-emerald-500/25 transition-all duration-300 active:scale-95 flex" href="https://wa.me/905070161813" target="_blank">
+                        <span>Randevu Al</span>
+                        <div class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xs text-white">arrow_forward</span>
+                        </div>
+                    </a>
+
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 text-slate-700 focus:outline-none transition-colors border border-slate-200">
+                        <span class="material-symbols-outlined text-xl">menu</span>
+                    </button>
                 </div>
-                <span id="nav-brand-text" class="font-serif-custom font-bold text-base sm:text-lg tracking-wide text-slate-900 whitespace-nowrap">Zülfükar CAN</span>
-            </a>
-
-            <!-- CENTER: Navigation Links (with subtle chevron icon matching screenshot) -->
-            <nav class="hidden md:flex items-center gap-1 mx-auto">
-                <a class="nav-link-item text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-1" href="#about">
-                    <span>Hakkında</span>
-                    <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
-                </a>
-                <a class="nav-link-item text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-1" href="#contact">
-                    <span>İletişim</span>
-                    <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
-                </a>
-                <a class="nav-link-item text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all" href="#location">Konum</a>
-                <a class="nav-link-item text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all" href="#hours">Çalışma Saatleri</a>
-                <a class="nav-link-item text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all" href="#other">Diğer</a>
-            </nav>
-
-            <!-- RIGHT: Phone + Vibrant Blue WhatsApp Button -->
-            <div class="flex items-center gap-3 shrink-0">
-                <a href="tel:05070161813" class="hidden lg:block text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors" id="nav-phone-link">0507 016 18 13</a>
-                <a id="btn-whatsapp-nav" class="hidden md:flex bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl items-center gap-2 shadow-md shadow-blue-500/25 transition-all duration-300 active:scale-95" href="https://wa.me/905070161813" target="_blank">
-                    <span>WhatsApp İletişim</span>
-                </a>
-                <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-slate-100 text-slate-700 focus:outline-none transition-colors border border-slate-200">
-                    <span class="material-symbols-outlined text-xl">menu</span>
-                </button>
             </div>
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div class="hidden mt-2 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden md:hidden text-slate-900" id="mobile-menu">
-            <div class="flex items-center gap-3 px-4 py-3 border-b border-slate-100">
-                <div class="w-7 h-7 rounded-xl bg-blue-600 flex items-center justify-center text-white shrink-0">
-                    <span class="material-symbols-outlined text-base">balance</span>
-                </div>
-                <span class="font-serif-custom font-bold text-sm text-slate-900">Av. Arb. Zülfükar CAN</span>
-            </div>
-            <div class="p-3 flex flex-col gap-1">
+        <div class="hidden max-w-6xl mx-auto px-4 mt-2 pointer-events-auto" id="mobile-menu">
+            <div class="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-200 p-4 text-slate-900 flex flex-col gap-2">
                 <a class="text-slate-700 hover:text-blue-600 hover:bg-slate-50 py-2.5 px-3 rounded-xl text-sm font-medium transition-colors" href="#about" onclick="toggleMobileMenu()">Hakkında</a>
                 <a class="text-slate-700 hover:text-blue-600 hover:bg-slate-50 py-2.5 px-3 rounded-xl text-sm font-medium transition-colors" href="#contact" onclick="toggleMobileMenu()">İletişim</a>
                 <a class="text-slate-700 hover:text-blue-600 hover:bg-slate-50 py-2.5 px-3 rounded-xl text-sm font-medium transition-colors" href="#location" onclick="toggleMobileMenu()">Konum</a>
                 <a class="text-slate-700 hover:text-blue-600 hover:bg-slate-50 py-2.5 px-3 rounded-xl text-sm font-medium transition-colors" href="#hours" onclick="toggleMobileMenu()">Çalışma Saatleri</a>
                 <a class="text-slate-700 hover:text-blue-600 hover:bg-slate-50 py-2.5 px-3 rounded-xl text-sm font-medium transition-colors" href="#other" onclick="toggleMobileMenu()">Diğer</a>
-            </div>
-            <div class="px-3 pb-3">
-                <a class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-3 px-4 rounded-xl w-full transition-colors shadow-md shadow-blue-500/20" href="https://wa.me/905070161813" target="_blank">
-                    WhatsApp İletişim
+                <a class="flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold py-3 px-4 rounded-xl w-full transition-colors shadow-md mt-2" href="https://wa.me/905070161813" target="_blank">
+                    <span>Randevu Al</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>
         </div>
@@ -764,16 +782,48 @@
             </div>
         </div>
 
+        <!-- Resmi İletişim Uyarısı -->
+        <div id="resmi-uyari" class="max-w-6xl mx-auto px-6 mt-10 scroll-mt-24">
+            <div class="bg-amber-500/10 border border-amber-500/25 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 backdrop-blur-sm shadow-inner">
+                <div class="p-3 bg-amber-500/20 text-amber-400 rounded-xl shrink-0 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-2xl">shield_lock</span>
+                </div>
+                <div class="space-y-1">
+                    <h5 class="font-bold text-amber-400 text-sm sm:text-base flex items-center gap-2">
+                        Önemli Uyarı
+                    </h5>
+                    <p class="text-xs sm:text-sm text-amber-100/90 leading-relaxed">
+                        Lütfen yalnızca bu web sitesinde yer alan resmi telefon numarası üzerinden bizimle iletişime geçiniz. Bunun dışında kullanılan telefon numaraları tarafımıza ait değildir. Bu numaralardan gelen arama veya mesajları dikkate almayınız. Güvenliğiniz için resmi iletişim bilgilerimizi kullanmanızı önemle tavsiye ederiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="max-w-6xl mx-auto px-6 border-t border-white/10 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 font-medium">
             <p>© 2026 Arabulucu Avukat Zülfükar CAN. Tüm Hakları Saklıdır.</p>
             <p>Diyarbakır Barosu / Avukatlık Hizmetleri</p>
         </div>
     </footer>
 
-    <!-- MOBILE FLOATING CONTACT ACTION BUTTON -->
-    <a class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl md:hidden hover:scale-110 active:scale-95 transition-all duration-300" href="https://wa.me/905070161813" target="_blank" aria-label="WhatsApp İletişim">
-        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
-    </a>
+    <!-- FLOATING ACTION BUTTONS (Uyarı + WhatsApp) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+        <!-- Floating Warning Button -->
+        <a href="#resmi-uyari" class="group relative bg-amber-500 hover:bg-amber-400 text-slate-950 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-amber-300/80 animate-bounce hover:animate-none" aria-label="Önemli Uyarıya Git" title="Önemli İletişim Uyarısı">
+            <span class="material-symbols-outlined text-2xl font-bold text-slate-950">warning</span>
+            <!-- Floating Tooltip Label -->
+            <span class="absolute right-14 bg-slate-900 text-amber-300 text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl border border-amber-500/30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Önemli Uyarı
+            </span>
+        </a>
+
+        <!-- Floating WhatsApp Action Button -->
+        <a class="group relative bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" href="https://wa.me/905070161813" target="_blank" aria-label="WhatsApp İletişim">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
+            <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl border border-white/10 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                WhatsApp İletişim
+            </span>
+        </a>
+    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -798,51 +848,17 @@
             }
         });
 
-        // Dynamic Inverted Navbar on Scroll (White inside Hero, Dark when scrolled past Hero)
+        // Dynamic Notch Navbar Shadow on Scroll
         const navbar = document.getElementById('navbar-capsule');
-        const navBrandText = document.getElementById('nav-brand-text');
-        const navLinks = document.querySelectorAll('.nav-link-item');
-        const navPhoneLink = document.getElementById('nav-phone-link');
-        const homeSection = document.getElementById('home');
 
         function handleScroll() {
             if (!navbar) return;
-            const heroHeight = homeSection ? homeSection.offsetHeight - 90 : 450;
-
-            if (window.scrollY >= heroHeight) {
-                // Scrolled past Hero: INVERT TO DARK CAPSULE (for light sections)
-                navbar.classList.remove('bg-white/95', 'text-slate-900', 'border-slate-200/80', 'shadow-[0_4px_30px_rgba(0,0,0,0.12)]');
-                navbar.classList.add('bg-slate-900/90', 'text-white', 'border-white/15', 'shadow-2xl', 'backdrop-blur-xl');
-
-                if (navBrandText) {
-                    navBrandText.classList.remove('text-slate-900');
-                    navBrandText.classList.add('text-white');
-                }
-                if (navPhoneLink) {
-                    navPhoneLink.classList.remove('text-slate-700', 'hover:text-blue-600');
-                    navPhoneLink.classList.add('text-slate-200', 'hover:text-white');
-                }
-                navLinks.forEach(link => {
-                    link.classList.remove('text-slate-700', 'hover:text-blue-600', 'hover:bg-slate-100/80');
-                    link.classList.add('text-slate-200', 'hover:text-white', 'hover:bg-white/10');
-                });
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-[0_15px_40px_rgba(0,0,0,0.18)]', 'border-slate-300/80');
+                navbar.classList.remove('shadow-[0_12px_35px_rgba(0,0,0,0.12)]', 'border-slate-200/80');
             } else {
-                // Inside Hero: WHITE CAPSULE (for dark Hero background)
-                navbar.classList.remove('bg-slate-900/90', 'text-white', 'border-white/15', 'shadow-2xl', 'backdrop-blur-xl');
-                navbar.classList.add('bg-white/95', 'text-slate-900', 'border-slate-200/80', 'shadow-[0_4px_30px_rgba(0,0,0,0.12)]');
-
-                if (navBrandText) {
-                    navBrandText.classList.remove('text-white');
-                    navBrandText.classList.add('text-slate-900');
-                }
-                if (navPhoneLink) {
-                    navPhoneLink.classList.remove('text-slate-200', 'hover:text-white');
-                    navPhoneLink.classList.add('text-slate-700', 'hover:text-blue-600');
-                }
-                navLinks.forEach(link => {
-                    link.classList.remove('text-slate-200', 'hover:text-white', 'hover:bg-white/10');
-                    link.classList.add('text-slate-700', 'hover:text-blue-600', 'hover:bg-slate-100/80');
-                });
+                navbar.classList.remove('shadow-[0_15px_40px_rgba(0,0,0,0.18)]', 'border-slate-300/80');
+                navbar.classList.add('shadow-[0_12px_35px_rgba(0,0,0,0.12)]', 'border-slate-200/80');
             }
         }
 

@@ -1,33 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
-  <!-- Deep Royal Navy Background with Rounded Corners -->
-  <rect width="512" height="512" rx="128" fill="#050b14"/>
+  <!-- Deep Navy Background with Smooth Corners -->
+  <rect width="512" height="512" rx="100" fill="#09101d"/>
   
-  <!-- Outer Gold Ring -->
-  <circle cx="256" cy="256" r="220" fill="none" stroke="#fef3c7" stroke-width="8" opacity="0.5"/>
-  <circle cx="256" cy="256" r="200" fill="none" stroke="#0066ff" stroke-width="12" opacity="0.6"/>
-
-  <!-- Golden Scales of Justice Icon -->
-  <g fill="#fef3c7" stroke="#fef3c7" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Center Beam Pillar -->
-    <rect x="246" y="100" width="20" height="280" rx="10"/>
-    <!-- Base -->
-    <path d="M150 380 H362 A 10 10 0 0 1 362 400 H150 A 10 10 0 0 1 150 380 Z"/>
-    <path d="M190 350 H322 L332 380 H180 Z"/>
+  <!-- Subtle Outer Gold Accent Circle -->
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#f59e0b" stroke-width="8" opacity="0.6"/>
+  
+  <!-- Scales of Justice (Terazi) in Rich Gold -->
+  <g fill="#fbbf24" stroke="#fbbf24">
+    <!-- Center Pillar -->
+    <rect x="244" y="110" width="24" height="280" rx="10"/>
+    <circle cx="256" cy="98" r="24"/>
     
-    <!-- Top Ornament -->
-    <circle cx="256" cy="90" r="20"/>
-
-    <!-- Crossbeam -->
-    <path d="M90 150 Q 256 120 422 150" fill="none" stroke-width="18"/>
-
-    <!-- Left Scale Chain & Pan -->
-    <line x1="90" y1="150" x2="60" y2="260" stroke-width="6"/>
-    <line x1="90" y1="150" x2="150" y2="260" stroke-width="6"/>
-    <path d="M40 260 C 40 310, 170 310, 170 260 Z" stroke-width="6"/>
-
-    <!-- Right Scale Chain & Pan -->
-    <line x1="422" y1="150" x2="362" y2="260" stroke-width="6"/>
-    <line x1="422" y1="150" x2="452" y2="260" stroke-width="6"/>
-    <path d="M342 260 C 342 310, 472 310, 472 260 Z" stroke-width="6"/>
+    <!-- Base -->
+    <rect x="156" y="374" width="200" height="32" rx="8"/>
+    <rect x="186" y="354" width="140" height="20" rx="6"/>
+    
+    <!-- Horizontal Crossbeam -->
+    <path d="M 90 165 L 422 165" stroke="#fbbf24" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="90" cy="165" r="12"/>
+    <circle cx="422" cy="165" r="12"/>
+    
+    <!-- Left Scale Chains & Pan -->
+    <path d="M 90 165 L 55 300" stroke="#fbbf24" stroke-width="6"/>
+    <path d="M 90 165 L 125 300" stroke="#fbbf24" stroke-width="6"/>
+    <path d="M 25 300 C 25 350, 155 350, 155 300 Z" fill="#fbbf24" stroke="#d97706" stroke-width="4"/>
+    
+    <!-- Right Scale Chains & Pan -->
+    <path d="M 422 165 L 387 300" stroke="#fbbf24" stroke-width="6"/>
+    <path d="M 422 165 L 457 300" stroke="#fbbf24" stroke-width="6"/>
+    <path d="M 357 300 C 357 350, 487 350, 487 300 Z" fill="#fbbf24" stroke="#d97706" stroke-width="4"/>
   </g>
 </svg>
