@@ -78,23 +78,6 @@
         .animate-float-slow {
             animation: float 6s ease-in-out infinite;
         }
-        /* Smooth underline transitions */
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #0066ff;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
         /* Stars & Shooting Stars animations */
         @keyframes twinkle {
             0%, 100% { opacity: 0.15; transform: scale(0.8); }
@@ -153,10 +136,6 @@
             will-change: transform, opacity;
         }
         /* Entrance Animations */
-        @keyframes fadeDown {
-            from { transform: translate(-50%, -50px); opacity: 0; }
-            to { transform: translate(-50%, 0); opacity: 1; }
-        }
         @keyframes fadeInUp {
             from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -164,9 +143,6 @@
         @keyframes scaleIn {
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
-        }
-        .animate-fade-down {
-            animation: fadeDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .animate-fade-in-up {
             opacity: 0;
