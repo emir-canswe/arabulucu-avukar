@@ -915,7 +915,7 @@
 
         if (heroCanvas && heroWrapper) {
             const ctx = heroCanvas.getContext('2d');
-            const images = [];
+            const images = Array(FRAME_COUNT).fill(null);
             let loadedImageCount = 0;
             let currentFrameIndex = 0;
             let animationFrameId = null;
@@ -935,14 +935,13 @@
                 }
             }
 
-            function onFrameLoaded() {
-                loadedImageCount++;
+            function updateProgress() {
                 const percent = Math.min(100, Math.floor((loadedImageCount / FRAME_COUNT) * 100));
                 if (preloadProgressText) preloadProgressText.textContent = `${percent}%`;
 
-                // Render initial frame as soon as frame 1 is ready
-                if (loadedImageCount >= 1) {
-                    renderFrame(currentFrameIndex);
+                // Render the first frame as soon as images[0] is successfully loaded
+                if (images[0] && currentFrameIndex === 0) {
+                    renderFrame(0);
                 }
 
                 if (loadedImageCount >= FRAME_COUNT) {
@@ -950,19 +949,33 @@
                 }
             }
 
-            // 1. Preload all 25 frame images with fail-safe cached handlers
+            // 1. Preload all 25 frame images with fail-safe pre-allocated slots
             for (let i = 1; i <= FRAME_COUNT; i++) {
                 const img = new Image();
-                img.onload = onFrameLoaded;
-                img.onerror = onFrameLoaded;
+                const index = i - 1;
+                
+                img.onload = () => {
+                    if (!images[index]) {
+                        images[index] = img;
+                        loadedImageCount++;
+                        updateProgress();
+                    }
+                };
+                img.onerror = () => {
+                    loadedImageCount++;
+                    updateProgress();
+                };
+                
                 img.src = FRAME_PATH_TEMPLATE(i);
 
                 // Handle cached images synchronously
                 if (img.complete) {
-                    onFrameLoaded();
+                    if (!images[index]) {
+                        images[index] = img;
+                        loadedImageCount++;
+                        updateProgress();
+                    }
                 }
-
-                images.push(img);
             }
 
             // Safety Fallback: Guarantee preloader disappears within 2.5 seconds under all conditions
@@ -971,7 +984,7 @@
             // 2. Render frame on canvas with aspect-ratio cover logic
             function renderFrame(index) {
                 const img = images[index];
-                if (!img || !img.complete) return;
+                if (!img) return;
 
                 const cw = heroCanvas.width;
                 const ch = heroCanvas.height;
@@ -1042,7 +1055,9 @@
 
             window.addEventListener('scroll', updateHeroScroll, { passive: true });
             window.addEventListener('touchmove', updateHeroScroll, { passive: true });
-            updateHeroScroll();
+            
+            // Initial trigger
+            setTimeout(updateHeroScroll, 100);
         }
     </script>
 </body>
