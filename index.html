@@ -1020,13 +1020,36 @@
             function resizeCanvas() {
                 heroCanvas.width = window.innerWidth;
                 heroCanvas.height = window.innerHeight;
-                renderFrame(currentFrameIndex);
+                renderFrame(Math.round(interpolatedFrame));
             }
 
             window.addEventListener('resize', resizeCanvas, { passive: true });
             resizeCanvas();
 
-            // 4. Scroll progress calculation & parallax text fade effect
+            // 4. Eased animation loop using Linear Interpolation (Lerp)
+            let targetFrameIndex = 0;
+            let interpolatedFrame = 0;
+            let isLoopRunning = false;
+
+            function animationLoop() {
+                const diff = targetFrameIndex - interpolatedFrame;
+
+                // Stop loop and snap when difference is negligible
+                if (Math.abs(diff) < 0.005) {
+                    interpolatedFrame = targetFrameIndex;
+                    renderFrame(Math.round(interpolatedFrame));
+                    isLoopRunning = false;
+                    return;
+                }
+
+                // Smoothly ease 10% of distance on each frame tick
+                interpolatedFrame += diff * 0.10;
+                renderFrame(Math.round(interpolatedFrame));
+
+                animationFrameId = requestAnimationFrame(animationLoop);
+            }
+
+            // 5. Scroll progress calculation & parallax text fade effect
             function updateHeroScroll() {
                 const wrapperRect = heroWrapper.getBoundingClientRect();
                 const totalScrollableHeight = wrapperRect.height - window.innerHeight;
@@ -1037,13 +1060,13 @@
                 let progress = -wrapperRect.top / totalScrollableHeight;
                 progress = Math.max(0, Math.min(1, progress));
 
-                // Calculate current frame index (0 to 24)
-                const targetFrame = Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT));
+                // Map progress to float frame index (0.0 to 24.0)
+                targetFrameIndex = progress * (FRAME_COUNT - 1);
 
-                if (targetFrame !== currentFrameIndex) {
-                    currentFrameIndex = targetFrame;
-                    if (animationFrameId) cancelAnimationFrame(animationFrameId);
-                    animationFrameId = requestAnimationFrame(() => renderFrame(currentFrameIndex));
+                // Start lerping animation loop if inactive
+                if (!isLoopRunning) {
+                    isLoopRunning = true;
+                    animationFrameId = requestAnimationFrame(animationLoop);
                 }
 
                 // Parallax translateY & Opacity fade out on text overlay
