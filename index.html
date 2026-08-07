@@ -263,8 +263,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Pure Dark Theme) -->
-    <main>
     <!-- HERO SECTION (Apple Style 3D Canvas Scroll Sequence) -->
     <main>
         <section id="home" class="relative w-full h-[300vh] bg-[#050b14] text-white">
@@ -900,6 +898,11 @@
                 });
             }
         }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('touchmove', handleScroll, { passive: true });
+        window.addEventListener('DOMContentLoaded', handleScroll);
+        window.addEventListener('load', handleScroll);
 
         // ─── 3D SCROLL CANVAS SEQUENCE ENGINE (Apple Style) ───
         // Configurable frame variables
