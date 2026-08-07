@@ -795,23 +795,23 @@
         </div>
     </footer>
 
-    <!-- FLOATING ACTION BUTTONS (Uyarı + WhatsApp) -->
-    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2.5 sm:gap-3 items-end">
-        <!-- Floating Warning Button -->
-        <a href="#resmi-uyari" class="group relative bg-amber-500 hover:bg-amber-400 text-slate-950 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-amber-300/80 animate-bounce hover:animate-none" aria-label="Önemli Uyarıya Git" title="Önemli İletişim Uyarısı">
-            <span class="material-symbols-outlined text-xl sm:text-2xl font-bold text-slate-950">warning</span>
-            <!-- Floating Tooltip Label -->
-            <span class="absolute right-14 bg-slate-900 text-amber-300 text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl border border-amber-500/30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block">
-                Önemli Uyarı
+    <!-- FLOATING ACTION BUTTONS (Güvenlik Uyarısı + WhatsApp Pill Badges) -->
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col gap-2.5 sm:gap-3 items-end pointer-events-none">
+        <!-- Floating Security Warning Pill Badge -->
+        <a href="#resmi-uyari" class="pointer-events-auto group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2 shadow-[0_8px_25px_rgba(245,158,11,0.4)] border border-amber-300/60 hover:scale-105 active:scale-95 transition-all duration-300" aria-label="Önemli Uyarıya Git" title="Önemli İletişim Uyarısı">
+            <span class="w-6 h-6 rounded-full bg-slate-950 text-amber-400 flex items-center justify-center shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-sm font-bold">shield_lock</span>
             </span>
+            <span class="text-xs font-bold text-slate-950 tracking-wide">Resmi Uyarı</span>
         </a>
 
-        <!-- Floating WhatsApp Action Button -->
-        <a class="group relative bg-green-500 hover:bg-green-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300" href="https://wa.me/905070161813" target="_blank" aria-label="WhatsApp İletişim">
-            <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
-            <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-xl shadow-xl border border-white/10 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block">
-                WhatsApp İletişim
-            </span>
+        <!-- Floating WhatsApp Action Pill Badge -->
+        <a class="pointer-events-auto group relative bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-full flex items-center gap-2 sm:gap-2.5 shadow-[0_10px_30px_rgba(16,185,129,0.4)] border border-emerald-300/50 hover:scale-105 active:scale-95 transition-all duration-300" href="https://wa.me/905070161813" target="_blank" aria-label="WhatsApp İletişim">
+            <div class="relative flex items-center justify-center">
+                <svg class="w-5 h-5 sm:w-5 sm:h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.461c1.543.917 3.31 1.408 5.119 1.409 5.454 0 9.893-4.438 9.895-9.892.001-2.646-1.027-5.131-2.898-7.001-1.871-1.871-4.357-2.9-7.002-2.901-5.453 0-9.891 4.439-9.893 9.892 0 1.932.559 3.812 1.614 5.425l-.105.167-1.104 4.032 4.127-1.082.167-.099z"></path></svg>
+                <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-200 animate-ping"></span>
+            </div>
+            <span class="text-xs sm:text-sm font-bold tracking-wide text-white">WhatsApp İletişim</span>
         </a>
     </div>
 
