@@ -923,43 +923,54 @@
             let loadedImageCount = 0;
             let currentFrameIndex = 0;
             let animationFrameId = null;
+            let isPreloaderDismissed = false;
 
-            // 1. Preload all 25 frame images
+            function dismissPreloader() {
+                if (isPreloaderDismissed) return;
+                isPreloaderDismissed = true;
+                if (heroPreloader) {
+                    heroPreloader.style.opacity = '0';
+                    heroPreloader.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        if (heroPreloader && heroPreloader.parentNode) {
+                            heroPreloader.parentNode.removeChild(heroPreloader);
+                        }
+                    }, 700);
+                }
+            }
+
+            function onFrameLoaded() {
+                loadedImageCount++;
+                const percent = Math.min(100, Math.floor((loadedImageCount / FRAME_COUNT) * 100));
+                if (preloadProgressText) preloadProgressText.textContent = `${percent}%`;
+
+                // Render initial frame as soon as frame 1 is ready
+                if (loadedImageCount >= 1) {
+                    renderFrame(currentFrameIndex);
+                }
+
+                if (loadedImageCount >= FRAME_COUNT) {
+                    dismissPreloader();
+                }
+            }
+
+            // 1. Preload all 25 frame images with fail-safe cached handlers
             for (let i = 1; i <= FRAME_COUNT; i++) {
                 const img = new Image();
+                img.onload = onFrameLoaded;
+                img.onerror = onFrameLoaded;
                 img.src = FRAME_PATH_TEMPLATE(i);
-                img.onload = () => {
-                    loadedImageCount++;
-                    const percent = Math.floor((loadedImageCount / FRAME_COUNT) * 100);
-                    if (preloadProgressText) preloadProgressText.textContent = `${percent}%`;
 
-                    // Render frame 0 immediately as soon as frame 1 arrives
-                    if (loadedImageCount === 1) {
-                        renderFrame(0);
-                    }
+                // Handle cached images synchronously
+                if (img.complete) {
+                    onFrameLoaded();
+                }
 
-                    // Hide preloader overlay smoothly when 100% loaded
-                    if (loadedImageCount === FRAME_COUNT) {
-                        if (heroPreloader) {
-                            heroPreloader.style.opacity = '0';
-                            heroPreloader.style.pointerEvents = 'none';
-                            setTimeout(() => {
-                                if (heroPreloader && heroPreloader.parentNode) {
-                                    heroPreloader.parentNode.removeChild(heroPreloader);
-                                }
-                            }, 700);
-                        }
-                    }
-                };
-                img.onerror = () => {
-                    loadedImageCount++;
-                    if (loadedImageCount === FRAME_COUNT && heroPreloader) {
-                        heroPreloader.style.opacity = '0';
-                        heroPreloader.style.pointerEvents = 'none';
-                    }
-                };
                 images.push(img);
             }
+
+            // Safety Fallback: Guarantee preloader disappears within 2.5 seconds under all conditions
+            setTimeout(dismissPreloader, 2500);
 
             // 2. Render frame on canvas with aspect-ratio cover logic
             function renderFrame(index) {
