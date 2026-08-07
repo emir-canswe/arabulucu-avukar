@@ -838,15 +838,44 @@
             }
         });
 
-        // Dynamic Navbar Shadow on Scroll
+        // ─── Contrast Inversion Navbar Scroll Theme (White inside Hero -> Black when Scrolled) ───
         const navbarCapsule = document.getElementById('navbar-capsule');
+        const notchLeft = document.getElementById('notch-svg-left');
+        const notchRight = document.getElementById('notch-svg-right');
+        const navBrandText = document.getElementById('nav-brand-text');
+        const navPhoneLink = document.getElementById('nav-phone-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuCard = document.querySelector('#mobile-menu > div');
 
         function handleScroll() {
             if (!navbarCapsule) return;
-            if (window.scrollY > 20) {
-                navbarCapsule.classList.add('shadow-lg', 'border-slate-300/80');
+            const isScrolled = window.scrollY > 100;
+            const navLinks = document.querySelectorAll('.nav-link-item');
+            
+            if (isScrolled) {
+                // OUTSIDE HERO (Scrolled to light sections) -> BLACK / DARK NAVBAR
+                navbarCapsule.className = "relative bg-slate-950/90 backdrop-blur-xl text-white px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-2xl border-b border-white/10 md:border-x md:border-white/10 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300";
+                if (notchLeft) notchLeft.setAttribute('fill', '#050b14');
+                if (notchRight) notchRight.setAttribute('fill', '#050b14');
+                if (navBrandText) navBrandText.className = "font-serif-custom font-bold text-base sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap";
+                if (navPhoneLink) navPhoneLink.className = "hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white transition-colors";
+                if (mobileMenuBtn) mobileMenuBtn.className = "md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-white focus:outline-none transition-all border border-white/15 active:scale-95 shrink-0";
+                if (mobileMenuCard) mobileMenuCard.className = "bg-slate-950/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-800 p-4 text-white flex flex-col gap-2";
+                navLinks.forEach(link => {
+                    link.className = "nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5";
+                });
             } else {
-                navbarCapsule.classList.remove('shadow-lg', 'border-slate-300/80');
+                // INSIDE HERO (Top of page) -> WHITE NAVBAR
+                navbarCapsule.className = "relative bg-white/98 md:bg-white backdrop-blur-md text-slate-900 px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-md border-b border-slate-200/80 md:border-x md:border-slate-200/70 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300";
+                if (notchLeft) notchLeft.setAttribute('fill', '#ffffff');
+                if (notchRight) notchRight.setAttribute('fill', '#ffffff');
+                if (navBrandText) navBrandText.className = "font-serif-custom font-bold text-base sm:text-base tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors whitespace-nowrap";
+                if (navPhoneLink) navPhoneLink.className = "hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors";
+                if (mobileMenuBtn) mobileMenuBtn.className = "md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 focus:outline-none transition-all border border-slate-200/80 active:scale-95 shrink-0";
+                if (mobileMenuCard) mobileMenuCard.className = "bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-200 p-4 text-slate-900 flex flex-col gap-2";
+                navLinks.forEach(link => {
+                    link.className = "nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5";
+                });
             }
         }
 
