@@ -160,56 +160,56 @@
     <header class="fixed top-0 left-0 right-0 z-50 pointer-events-none">
         <!-- Container: Full-width on mobile, floating notch centered on desktop -->
         <div class="w-full md:max-w-6xl md:mx-auto px-0 md:px-6 relative flex justify-center pointer-events-auto">
-            <div id="navbar-capsule" class="relative bg-slate-950/85 md:bg-slate-950/90 backdrop-blur-xl text-white px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-2xl border-b border-white/10 md:border-x md:border-white/10 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300">
+            <div id="navbar-capsule" class="relative bg-white/98 md:bg-white backdrop-blur-md text-slate-900 px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-md md:shadow-[0_8px_25px_rgba(0,0,0,0.06)] border-b border-slate-200/80 md:border-x md:border-slate-200/70 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300">
                 
                 <!-- Left Inverted Notch Concave SVG Corner (Desktop only) -->
-                <svg class="hidden md:block absolute top-0 -left-5 w-5 h-5 text-white pointer-events-none" viewBox="0 0 20 20">
-                    <path id="notch-svg-left" d="M 0,0 Q 20,0 20,20 L 20,0 Z" fill="#050b14" class="transition-colors duration-300"></path>
+                <svg class="hidden md:block absolute top-0 -left-5 w-5 h-5 text-white fill-current pointer-events-none" viewBox="0 0 20 20">
+                    <path id="notch-svg-left" d="M 0,0 Q 20,0 20,20 L 20,0 Z" fill="#ffffff"></path>
                 </svg>
 
                 <!-- Right Inverted Notch Concave SVG Corner (Desktop only) -->
-                <svg class="hidden md:block absolute top-0 -right-5 w-5 h-5 text-white pointer-events-none" viewBox="0 0 20 20">
-                    <path id="notch-svg-right" d="M 20,0 Q 0,0 0,20 L 0,0 Z" fill="#050b14" class="transition-colors duration-300"></path>
+                <svg class="hidden md:block absolute top-0 -right-5 w-5 h-5 text-white fill-current pointer-events-none" viewBox="0 0 20 20">
+                    <path id="notch-svg-right" d="M 20,0 Q 0,0 0,20 L 0,0 Z" fill="#ffffff"></path>
                 </svg>
 
                 <!-- COL 1 (LEFT): Brand Logo & Title -->
                 <a class="flex items-center gap-2.5 group shrink-0" href="#home" id="nav-brand">
-                    <div class="w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-blue-600 group-hover:bg-blue-500 flex items-center justify-center text-white shrink-0 shadow-md shadow-blue-500/20 transition-colors duration-300">
+                    <div class="w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-blue-600 group-hover:bg-blue-700 flex items-center justify-center text-white shrink-0 shadow-md shadow-blue-500/20 transition-colors duration-300">
                         <span class="material-symbols-outlined text-xl sm:text-lg text-white">balance</span>
                     </div>
                     <div class="flex flex-col">
-                        <span id="nav-brand-text" class="font-serif-custom font-bold text-base sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">Zülfükar CAN</span>
-                        <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider md:hidden">Arabulucu & Avukat</span>
+                        <span id="nav-brand-text" class="font-serif-custom font-bold text-base sm:text-base tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors whitespace-nowrap">Zülfükar CAN</span>
+                        <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider md:hidden">Arabulucu & Avukat</span>
                     </div>
                 </a>
 
                 <!-- COL 2 (CENTER): Navigation Links -->
                 <nav class="hidden md:flex items-center gap-4 lg:gap-6 justify-center mx-auto">
-                    <a class="nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#about">
+                    <a class="nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#about">
                         <span>Hakkında</span>
                         <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
                     </a>
-                    <a class="nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#contact">
+                    <a class="nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5" href="#contact">
                         <span>İletişim</span>
                         <span class="material-symbols-outlined text-xs text-slate-400">expand_more</span>
                     </a>
-                    <a class="nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors" href="#location">Konum</a>
-                    <a class="nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors" href="#hours">Çalışma Saatleri</a>
-                    <a class="nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors" href="#other">Diğer</a>
+                    <a class="nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors" href="#location">Konum</a>
+                    <a class="nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors" href="#hours">Çalışma Saatleri</a>
+                    <a class="nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors" href="#other">Diğer</a>
                 </nav>
 
                 <!-- COL 3 (RIGHT): Phone Link & Vibrant Blue WhatsApp Button -->
                 <div class="flex items-center justify-end gap-3.5 shrink-0">
-                    <a href="tel:05070161813" class="hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white transition-colors" id="nav-phone-link">
+                    <a href="tel:05070161813" class="hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors" id="nav-phone-link">
                         <span>0507 016 18 13</span>
                     </a>
                     
-                    <a id="btn-whatsapp-nav" class="hidden sm:flex bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-xl items-center gap-2 shadow-md shadow-blue-500/25 transition-all duration-300 active:scale-95" href="https://wa.me/905070161813" target="_blank">
+                    <a id="btn-whatsapp-nav" class="hidden sm:flex bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-xl items-center gap-2 shadow-md shadow-blue-500/25 transition-all duration-300 active:scale-95" href="https://wa.me/905070161813" target="_blank">
                         <span>WhatsApp İletişim</span>
                     </a>
 
                     <!-- Mobile Hamburger Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-white focus:outline-none transition-all border border-white/15 active:scale-95 shrink-0">
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 focus:outline-none transition-all border border-slate-200/80 active:scale-95 shrink-0">
                         <span class="material-symbols-outlined text-2xl">menu</span>
                     </button>
                 </div>
@@ -218,28 +218,28 @@
 
         <!-- Mobile Dropdown Menu -->
         <div class="hidden max-w-6xl mx-auto px-3 sm:px-4 mt-2 pointer-events-auto" id="mobile-menu">
-            <div class="bg-slate-900/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-800 p-4 text-white flex flex-col gap-2">
-                <a class="hover:text-blue-400 hover:bg-white/5 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#about" onclick="toggleMobileMenu()">
+            <div class="bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-200 p-4 text-slate-900 flex flex-col gap-2">
+                <a class="text-slate-800 hover:text-blue-600 hover:bg-slate-50 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#about" onclick="toggleMobileMenu()">
                     <span>Hakkında</span>
                     <span class="material-symbols-outlined text-slate-400 text-base">chevron_right</span>
                 </a>
-                <a class="hover:text-blue-400 hover:bg-white/5 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#contact" onclick="toggleMobileMenu()">
+                <a class="text-slate-800 hover:text-blue-600 hover:bg-slate-50 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#contact" onclick="toggleMobileMenu()">
                     <span>İletişim</span>
                     <span class="material-symbols-outlined text-slate-400 text-base">chevron_right</span>
                 </a>
-                <a class="hover:text-blue-400 hover:bg-white/5 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#location" onclick="toggleMobileMenu()">
+                <a class="text-slate-800 hover:text-blue-600 hover:bg-slate-50 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#location" onclick="toggleMobileMenu()">
                     <span>Konum</span>
                     <span class="material-symbols-outlined text-slate-400 text-base">chevron_right</span>
                 </a>
-                <a class="hover:text-blue-400 hover:bg-white/5 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#hours" onclick="toggleMobileMenu()">
+                <a class="text-slate-800 hover:text-blue-600 hover:bg-slate-50 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#hours" onclick="toggleMobileMenu()">
                     <span>Çalışma Saatleri</span>
                     <span class="material-symbols-outlined text-slate-400 text-base">chevron_right</span>
                 </a>
-                <a class="hover:text-blue-400 hover:bg-white/5 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#other" onclick="toggleMobileMenu()">
+                <a class="text-slate-800 hover:text-blue-600 hover:bg-slate-50 py-3 px-3.5 rounded-xl text-base font-semibold transition-colors flex items-center justify-between" href="#other" onclick="toggleMobileMenu()">
                     <span>Diğer Detaylar</span>
                     <span class="material-symbols-outlined text-slate-400 text-base">chevron_right</span>
                 </a>
-                <a class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-base font-semibold py-3.5 px-4 rounded-xl w-full transition-colors shadow-md mt-1" href="https://wa.me/905070161813" target="_blank">
+                <a class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3.5 px-4 rounded-xl w-full transition-colors shadow-md mt-1" href="https://wa.me/905070161813" target="_blank">
                     <span>WhatsApp İletişim</span>
                 </a>
             </div>
@@ -838,43 +838,15 @@
             }
         });
 
-        // ─── Dynamic Navbar Scroll Theme Switcher (Dark inside Hero -> Light when Scrolled) ───
+        // Dynamic Navbar Shadow on Scroll
         const navbarCapsule = document.getElementById('navbar-capsule');
-        const notchLeft = document.getElementById('notch-svg-left');
-        const notchRight = document.getElementById('notch-svg-right');
-        const navBrandText = document.getElementById('nav-brand-text');
-        const navPhoneLink = document.getElementById('nav-phone-link');
-        const mobileMenuCard = document.querySelector('#mobile-menu > div');
 
         function handleScroll() {
             if (!navbarCapsule) return;
-            const isScrolled = window.scrollY > 80;
-            const navLinks = document.querySelectorAll('.nav-link-item');
-            
-            if (isScrolled) {
-                // Light Theme (White) when scrolled past dark hero
-                navbarCapsule.className = "relative bg-white/98 md:bg-white backdrop-blur-md text-slate-900 px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-md border-b border-slate-200/80 md:border-x md:border-slate-200/70 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300";
-                if (notchLeft) notchLeft.setAttribute('fill', '#ffffff');
-                if (notchRight) notchRight.setAttribute('fill', '#ffffff');
-                if (navBrandText) navBrandText.className = "font-serif-custom font-bold text-base sm:text-base tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors whitespace-nowrap";
-                if (navPhoneLink) navPhoneLink.className = "hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors";
-                if (mobileMenuBtn) mobileMenuBtn.className = "md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 focus:outline-none transition-all border border-slate-200/80 active:scale-95 shrink-0";
-                if (mobileMenuCard) mobileMenuCard.className = "bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-200 p-4 text-slate-900 flex flex-col gap-2";
-                navLinks.forEach(link => {
-                    link.className = "nav-link-item text-slate-700 hover:text-blue-600 text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5";
-                });
+            if (window.scrollY > 20) {
+                navbarCapsule.classList.add('shadow-lg', 'border-slate-300/80');
             } else {
-                // Dark Theme (Navy/Glass) when at top inside Hero
-                navbarCapsule.className = "relative bg-slate-950/85 md:bg-slate-950/90 backdrop-blur-xl text-white px-4 sm:px-6 py-3 sm:py-3.5 md:py-2.5 w-full rounded-none md:rounded-b-[20px] shadow-2xl border-b border-white/10 md:border-x md:border-white/10 flex md:grid md:grid-cols-3 items-center justify-between transition-all duration-300";
-                if (notchLeft) notchLeft.setAttribute('fill', '#050b14');
-                if (notchRight) notchRight.setAttribute('fill', '#050b14');
-                if (navBrandText) navBrandText.className = "font-serif-custom font-bold text-base sm:text-base tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap";
-                if (navPhoneLink) navPhoneLink.className = "hidden lg:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white transition-colors";
-                if (mobileMenuBtn) mobileMenuBtn.className = "md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-white focus:outline-none transition-all border border-white/15 active:scale-95 shrink-0";
-                if (mobileMenuCard) mobileMenuCard.className = "bg-slate-900/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-slate-800 p-4 text-white flex flex-col gap-2";
-                navLinks.forEach(link => {
-                    link.className = "nav-link-item text-slate-300 hover:text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-0.5";
-                });
+                navbarCapsule.classList.remove('shadow-lg', 'border-slate-300/80');
             }
         }
 
